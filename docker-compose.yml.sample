@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  auth:
+    build:
+      context: .
+    container_name: pdns_auth
+    restart: always
+    ports:
+      - "53:53"
+      - "53:53/udp"
+      - "8088:8081"
+    environment:
+      - PDNSCONF_LOCAL_ADDRESS
+      - PDNSCONF_LAUNCH
+      - PDNSCONF_LMDB_FILENAME
+      - PDNSCONF_INCLUDE_DIR
+      - PDNSCONF_DNSUPDATE
+      - PDNSCONF_GUARDIAN
+      - PDNSCONF_VERSION_STRING
+      - PDNSCONF_DISTRIBUTOR_THREADS
+      - PDNSCONF_MASTER
+      - PDNSCONF_SLAVE
+      - PDNSCONF_API_KEY
+      - SECALLZONES_CRONJOB
