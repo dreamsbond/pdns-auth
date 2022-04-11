@@ -25,7 +25,7 @@ ADD ./apt/apt.conf.d/00norecommends /etc/apt/apt.conf.d/00norecommends
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -q -y pdns-server pdns-backend-lmdb && \
-    rm /etc/powerdns/pdns.d/*.conf && rm /etc/powerdns/*.conf && \
+    rm -f /etc/powerdns/pdns.d/*.conf && rm -f /etc/powerdns/*.conf && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends cron jq && \
     rm /etc/cron.daily/* && \
     mkdir /var/run/pdns && \

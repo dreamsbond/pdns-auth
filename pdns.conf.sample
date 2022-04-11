@@ -1,4 +1,1 @@
-local-address=0.0.0.0,::
-launch=lmdb
-lmdb-filename=/var/lib/powerdns/pdns.lmdb
-include-dir=/etc/powerdns/pdns.d
+# Additional pdns.conf settings goes here
